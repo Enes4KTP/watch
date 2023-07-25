@@ -1,0 +1,67 @@
+﻿@model EntityLayer.Sınıflar.Kullanici
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- jQuery kütüphanesi CDN adresi -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>_MainLayout</title>
+</head>
+
+
+<body>
+    <div>
+        <div class="loginsol">
+            <img src="/Images/ddd.jpg" alt="Alternate Text" />
+        </div>
+        <div class="loginsag">
+            <div class="loginlogo">
+                <p class="siteisim"> watch </p>
+            </div>
+            <div class="indexdiv" style="margin:0px 240px 0px 240px;">
+                <div class="text-center">
+                    <h2 style="font-size:24px; padding-bottom:15px;">Kayıt Ol</h2>
+
+                    <form class="form-group" method="post">
+                        <div class="kayitform">
+                            @Html.LabelFor(x=>x.KullaniciAd,"Adınız")
+                            @Html.TextBoxFor(x=>x.KullaniciAd, new {@class="form-control"})
+                        </div>
+                        <br />
+
+                        <div class="kayitform">
+                            @Html.LabelFor(x=>x.KullaniciSoyad, "Soyadınız")
+                            @Html.TextBoxFor(x=>x.KullaniciSoyad, new {@class="form-control"})
+                        </div>
+                        <br />
+
+                        <div class="kayitform">
+                            @Html.LabelFor(x=>x.KullaniciEmail,"Email Adresiniz")
+                            @Html.TextBoxFor(x=>x.KullaniciEmail, new {@class="form-control"})
+                        </div>
+                        <br />
+
+                        <div class="kayitform">
+                            @Html.LabelFor(x=>x.KullaniciSifre,"Şifreniz")
+                            @Html.PasswordFor(x=>x.KullaniciSifre, new {@class="form-control"})
+                        </div>
+                        <br />
+
+                        <button class="btnkayit" style="padding:5px; border-radius:5px;">Kayıt Ol</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

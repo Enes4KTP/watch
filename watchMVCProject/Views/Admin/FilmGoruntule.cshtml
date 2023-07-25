@@ -1,0 +1,30 @@
+﻿@model List<EntityLayer.Sınıflar.Filmler>
+@{
+    ViewData["Title"] = "FilmGoruntule";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Film Listesi</h1>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Film Adı</th>
+        <th>Film Türü</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.FilmAdi</td>
+            <td>@x.FilmTur.FilmTurAd</td>
+            <td><a href="/Admin/FilmSil/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/FilmGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/FilmEkle" class="btn btn-primary">Yeni Film Ekle</a>
+
+

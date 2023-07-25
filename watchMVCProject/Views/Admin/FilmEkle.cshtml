@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Sınıflar.Filmler
+@{
+    ViewData["Title"] = "FilmEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Film Ekleme Sayfası</h1>
+<br />
+<form class="form-group" method="post">
+
+	@Html.LabelFor(x=>x.FilmAdi,"Filmin Adı")
+	@Html.TextBoxFor(x=>x.FilmAdi, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.FilmGorsel, "Filmin Görseli")
+	@Html.TextBoxFor(x=>x.FilmGorsel, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.FilmAciklama,"Filmin Açıklaması")
+	@Html.TextBoxFor(x=>x.FilmAciklama, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.FilmLink,"Filmin Linki")
+	@Html.TextBoxFor(x=>x.FilmLink, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.FilmTur.Id,"Filmin Türü")
+	@Html.DropDownListFor(x => x.FilmTur.Id, ViewBag.FilmTurleri as SelectList, "Seçiniz", new {@class="form-control"})
+	<br />
+	<button class="btn btn-primary">Film Ekle</button>
+</form>
+
+
+
+

@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Sınıflar.Diziler
+@{
+    ViewData["Title"] = "DiziGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Dizi Güncelleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("DiziGuncelle", "Admin", FormMethod.Post))
+{
+	@Html.LabelFor(x=>x.Id,"Dizinin Adı")
+	@Html.TextBoxFor(x=>x.Id, new {@class="form-control",@readonly ="readonly"} )
+	<br />
+	@Html.LabelFor(x=>x.DiziAdi,"Dizinin Adı")
+	@Html.TextBoxFor(x=>x.DiziAdi, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.DiziGorsel, "Dizinin Görseli")
+	@Html.TextBoxFor(x=>x.DiziGorsel, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.DiziAciklama,"Filmin Açıklaması")
+	@Html.TextBoxFor(x=>x.DiziAciklama, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.DiziTur.Id,"Filmin Türü")
+	@Html.DropDownListFor(x => x.DiziTur.Id, ViewBag.DiziTurleri as SelectList, "Seçiniz", new {@class="form-control"})
+	<br />
+	<button class="btn btn-primary">Film Güncelle</button>
+
+}

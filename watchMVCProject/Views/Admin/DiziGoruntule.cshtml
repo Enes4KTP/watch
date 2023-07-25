@@ -1,0 +1,31 @@
+﻿@model List<EntityLayer.Sınıflar.Diziler>
+@{
+    ViewData["Title"] = "DiziGoruntule";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1>Dizi Listesi</h1>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Dizi Adı</th>
+        <th>Dizi Türü</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.DiziAdi</td>
+            <td>@x.DiziTur.DiziTurAd</td>
+            <td><a href="/Admin/DiziSil/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/DiziGetir/@x.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/DiziEkle" class="btn btn-primary">Yeni Dizi Ekle</a>
+
+

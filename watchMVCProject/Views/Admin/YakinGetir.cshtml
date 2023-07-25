@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Sınıflar.Yakindakiler
+@{
+    ViewData["Title"] = "YakinGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1>Yakindaki Filmleri Güncelleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("YakinGuncelle", "Admin", FormMethod.Post))
+{
+	@Html.LabelFor(x=>x.Id,"Filmin Adı")
+	@Html.TextBoxFor(x=>x.Id, new {@class="form-control",@readonly ="readonly"} )
+	<br />
+	@Html.LabelFor(x=>x.YakinAdi,"Filmin Adı")
+	@Html.TextBoxFor(x=>x.YakinAdi, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.YakinGorsel, "Filmin Görseli")
+	@Html.TextBoxFor(x=>x.YakinGorsel, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.YakinAciklama,"Filmin Açıklaması")
+	@Html.TextBoxFor(x=>x.YakinAciklama, new {@class="form-control"})
+	<br />
+
+	@Html.LabelFor(x=>x.YakinTarih,"Filmin Linki")
+	@Html.TextBoxFor(x => x.YakinTarih, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+	<br />
+
+	@Html.LabelFor(x=>x.FilmTur.Id,"Filmin Türü")
+	@Html.DropDownListFor(x => x.FilmTur.Id, ViewBag.YFilmTurleri as SelectList, "Seçiniz", new {@class="form-control"})
+	<br />
+	<button class="btn btn-primary">Film Güncelle</button>
+}
+

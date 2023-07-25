@@ -1,0 +1,54 @@
+﻿@model EntityLayer.Sınıflar.Kullanici
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- jQuery kütüphanesi CDN adresi -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>_MainLayout</title>
+</head>
+
+
+<body>
+    <div>
+        <div class="loginsol">
+            <img src="/Images/ddd.jpg" alt="Alternate Text" />
+        </div>
+        <div class="loginsag">
+            <div class="loginlogo">
+                <p class="siteisim"> watch </p>
+            </div>
+            <div class="indexdiv">
+                <div class="text-center">
+                    <h2 style="font-size:24px">Giriş yap</h2>
+
+                    <form method="post" asp-controller="Login" asp-action="Index">
+                        <!-- Giriş hatalarını göster -->
+                        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                        {
+                            <div class="alert alert-danger" id="loginError" style="font-size: 14px;">
+                                <strong>Hata:</strong> @ViewBag.ErrorMessage
+                            </div>
+                        }
+
+                        <p class="logintext"><input type="text" name="KullaniciEmail" value="" placeholder="Kullanıcı Adı" required></p>
+                        <p class="password"><input type="password" name="KullaniciSifre" value="" placeholder="Şifre" required></p>
+
+                        <p class="submit"><input type="submit" name="commit" value="Giriş Yap"></p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+

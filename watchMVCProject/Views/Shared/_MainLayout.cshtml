@@ -1,0 +1,72 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- jQuery kütüphanesi CDN adresi -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>_MainLayout</title>
+</head>
+<body>
+    <!--header section start-->
+    <header>
+        <div class="navbar">
+            <div class="navbar-wrapper">
+                <div class="sitediv">
+                    <a class="siteisim" href="/Main/Index" style="color:#000000">watch</a>
+                </div>
+
+                <div class="menu">
+                    <ul class="menu-list">
+                        <li class="menu-list-item">
+                            <a href="#" class="pro">watch<span>Pro</span></a>
+                        </li>
+                        <li class="menu-list-item">
+                            <a href="~/Login/Index" class="login">Giriş Yap</a>
+                        </li>
+                        <li class="menu-list-item">
+                            <a href="~/Register/KayitOl" class="register">Hesap Aç</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!--header section start-->
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-items">
+                <a href="#">
+                    <i class="bi bi-instagram"> </i>
+                </a>
+                <a href="#">
+                    <i class="bi bi-twitter"> </i>
+                </a>
+                <a href="#">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="bi bi-pinterest"> </i>
+                </a>
+            </div>
+        </div>
+        <div class="reserved">
+
+            <p class="bi bi-c-circle"> 2023 by watch.com Inc.</p>
+
+        </div>
+    </footer>
+</body>
+</html>
